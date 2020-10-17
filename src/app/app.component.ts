@@ -33,29 +33,35 @@ export class AppComponent {
   async search() {
     this.ceps = new Array();
 
-    if (this.optionInput === 'cep') {
-      if (this.searchInput.length !== 9 || this.searchInput.match(/\d{5}\-\d{3}/) === null) {
-        alert('O CEP informado não está no formato correto.');
+    try {
+      if (this.optionInput === 'cep') {
+        if (this.searchInput.length !== 9 || this.searchInput.match(/\d{5}\-\d{3}/) === null) {
+          alert('O CEP informado não está no formato correto.');
 
-        return;
+          return;
+        }
+
+        this.isLoading = true;
+
+        this.ceps.push(await this.cepService.searchCep(this.searchInput));
       }
+      else {
+        if (this.searchInput.length !== 2) {
+          alert('O UF informado não está no formato correto.');
 
-      this.isLoading = true;
+          return;
+        }
 
-      this.ceps.push(await this.cepService.searchCep(this.searchInput));
-    }
-    else {
-      if (this.searchInput.length !== 2) {
-        alert('O UF informado não está no formato correto.');
+        this.isLoading = true;
 
-        return;
+        this.ceps = await this.cepService.searchState(this.searchInput);
       }
-
-      this.isLoading = true;
-
-      this.ceps = await this.cepService.searchState(this.searchInput);
     }
-
-    this.isLoading = false;
+    catch (e) {
+      alert('Erro ao buscar os dados.');
+    }
+    finally {
+      this.isLoading = false;
+    }
   }
 }
