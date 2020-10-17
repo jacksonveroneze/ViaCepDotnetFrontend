@@ -1,13 +1,12 @@
 import { Cep } from './../models/cep';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CepService {
-
-  url = 'https://localhost:5001/search-cep';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -15,7 +14,11 @@ export class CepService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  search(data: string): Promise<Cep> {
-    return this.httpClient.get<Cep>(`${this.url}/${data}`).toPromise();
+  searchCep(data: string): Promise<Cep> {
+    return this.httpClient.get<Cep>(`${environment.urlServer}/search/zip-code/${data}`).toPromise();
+  }
+
+  searchState(data: string): Promise<Cep[]> {
+    return this.httpClient.get<Cep[]>(`${environment.urlServer}/search/state/${data}`).toPromise();
   }
 }
