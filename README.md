@@ -54,6 +54,10 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
   3. Agora seu projeto está em execução, abra o navegador e acesse: http://localhost:4200/
 
+
+![Image of Yaktocat](https://github.com/jacksonveroneze/ViaCepDotnetFrontend/blob/main/images/1.png)
+
+
 ### Tecnologias:
 
 - Angular 10
