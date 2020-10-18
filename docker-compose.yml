@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+    frontend:
+        container_name: frontend
+        image: docker.pkg.github.com/jacksonveroneze/viacepdotnetfrontend/viacepdotnetfrontend:1.0.0
+        build:
+            context: .
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
+        environment:
+          - URL_SERVER=http:172.17.0.1:80
