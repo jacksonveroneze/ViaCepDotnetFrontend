@@ -19,11 +19,11 @@ Você precisará das seguintes ferramentas se desejar rodar o projeto usando doc
 Siga estas etapas para para rodar o projeto em produção:
 
   1. Clone o repositório
-  
+ 
   2. Instale o angular-cli
-    ```
-    npm install -g @angular/cli
-    ```
+     ```
+     npm install -g @angular/cli
+     ```
   3. No diretório raiz, restaure os pacotes (npm) executando:
      ```
      npm install
