@@ -30,15 +30,15 @@ Siga estas etapas para para rodar o projeto em produção:
      ```
      npm install
      ```
-  4. Em seguida o parâmetro "url server" no arquivo "src/environments/environment.ts" com o objetivo de apontar para a API:
+  4. Em seguida altere o parâmetro "url server" no arquivo "src/environments/environment.ts" com o objetivo de apontar para a API:
      ```
      urlServer: 'http://localhost:8000'
      ```
-  5. Em seguida compile o projeto executando:
+  5. Após execute:
      ```
      ng serve
      ```
-  6. Agora seus projetos estão em execução, abra o navegador e acesse: http://localhost:4200/
+  6. Agora seu projeto está em execução, abra o navegador e acesse: http://localhost:4200/
   
   
   #### Setup (Com Docker)
@@ -52,9 +52,9 @@ Siga estas etapas para para rodar o projeto em produção:
      docker-compose build
      docker-compose up -d
      ```
-  3. Agora seus projetos estão em execução, abra o navegador e acesse: http://localhost:4200/
+  3. Agora seu projeto está em execução, abra o navegador e acesse: http://localhost:4200/
 
-### Technologies:
+### Tecnologias:
 
 - Angular 10
 
