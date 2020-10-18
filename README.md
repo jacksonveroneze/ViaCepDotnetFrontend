@@ -20,8 +20,10 @@ Siga estas etapas para para rodar o projeto em produção:
 
   1. Clone o repositório
  
-  2. Instale o angular-cli
+  2. Instale o nodejs e o angular-cli
      ```
+     https://nodejs.org/en/download/
+     
      npm install -g @angular/cli
      ```
   3. No diretório raiz, restaure os pacotes (npm) executando:
